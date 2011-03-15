@@ -248,6 +248,9 @@ module Gattica
       if (start_index = args[:start_index].to_i) > 0
         output += "&start-index=#{start_index}"
       end
+      unless args[:max_results].nil?
+        output += "&max-results=#{args[:max_results]}"
+      end
       unless args[:dimensions].empty?
         output += '&dimensions=' + args[:dimensions].collect do |dimension|
           "ga:#{dimension}"
