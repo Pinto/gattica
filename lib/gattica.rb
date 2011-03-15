@@ -246,7 +246,7 @@ module Gattica
     def build_query_string(args,profile)
       output = "ids=ga:#{profile}&start-date=#{args[:start_date]}&end-date=#{args[:end_date]}"
       if (start_index = args[:start_index].to_i) > 0
-        output += "&start#index=#{start_index}"
+        output += "&start-index=#{start_index}"
       end
       unless args[:dimensions].empty?
         output += '&dimensions=' + args[:dimensions].collect do |dimension|
